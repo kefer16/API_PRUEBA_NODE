@@ -4,30 +4,23 @@ const categoriesController = require('../../controllers/categoryController');
 
 router
 	/**
-	 * @swagger
-	 * /:
-	 *   get:
-	 *     summary: Listar todas las categorias
-	 *     description: descripcion lista.
-	*/
-	.get('/', categoriesController.getAllCategories)
-	/**
-	 * @swagger
-	 * /{categoryId}:
-	 *   get:
-	 *     summary: Listar una sola categoria
-	 *     description: descripcion lista.
-	*/
-	.get('/:categoryId', categoriesController.getOneCategory)
-	/**
-	 * @swagger
-	 * /category_insert:
-	 *   post:
-	 *     summary: Inserta una sola categoria
-	 *     description: descripcion lista.
-	*/
+		@swagger
+		'/api/v1/category': {
+	       'get': {
+				'description': 'My numeric endpoint',
+				'responses': {
+					'200': {
+						'description': 'Returns a mysterious number'
+					}
+				}
+			}
+		}
+ 	*/
+	.get('/category/', categoriesController.getAllCategories)
+
+	.get('/category/:categoryId', categoriesController.getOneCategory)
 	.post(
-		'/category_insert',
+		'/category/category_insert',
 		express.json({ type: 'application/json' }),
 		categoriesController.postInsertCategories
 	);

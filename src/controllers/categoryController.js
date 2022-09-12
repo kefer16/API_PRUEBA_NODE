@@ -8,14 +8,14 @@ const getAllCategories = async (req, res) => {
 const getOneCategory = async (req, res) => {
 	console.log(req.params);
 	//console.log(req.query); recibir datos como query parameters
-	console.log(req.body);
-	console.log(req.body.user);
-	if (req.accepts('text/html')) {
-		return res.status(406).json({
-			ok: false,
-			msg: 'No hay token en la peticion',
-		});
-	}
+	// console.log(req.body);
+	// console.log(req.body.user);
+	// if (req.accepts('text/html')) {
+	// 	return res.status(406).json({
+	// 		ok: false,
+	// 		msg: 'No hay token en la peticion',
+	// 	});
+	// }
 	let oneCategories = await categorieService.getOneCategory(
 		req.params.categoryId
 	);

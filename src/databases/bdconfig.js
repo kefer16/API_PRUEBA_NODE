@@ -1,9 +1,12 @@
+/* eslint-disable no-undef */
+require('dotenv').config()
+
 const config = 
 {
-    user: 'sa',
-    password: '#123mOra',
-    server: 'DESKTOP-GM75S7C',
-    database: 'SISTEMA',
+    server: process.env.API_DB_SERVER,
+    database: process.env.API_DB_DATABASE,
+    user: process.env.API_DB_USUARIO,
+    password: process.env.API_DB_PASSWORD,
     options: {
         trustedconnection: false,
         enableArithAbort: true,
